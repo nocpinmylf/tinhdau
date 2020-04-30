@@ -14,7 +14,7 @@
   background-color: $white-color-blur;
   padding: .6rem 0; 
   width: 100%;
-  z-index: 1;
+  z-index: 10;
 
   &>.wrap {
     @include flex(row, center, space-between);
@@ -186,10 +186,11 @@
     margin-bottom: 10px;
     font-weight: bold;
     font-size: $font-size * 2.5;
-    text-align: justify;
+    text-align: center;
 
     &.smaller {
       font-weight: normal;
+      text-align: justify;
       font-size: $font-size * 1.3;
     }
   }
