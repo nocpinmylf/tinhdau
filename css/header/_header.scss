@@ -1,0 +1,210 @@
+@import "../global/mixin";
+@import "../global/config";
+@import "../global/valuable";
+
+// =============
+#header {
+  @include flex(column, center, null);
+  height: 100vh;
+}
+
+.header-nav {
+  @include trans(.2s);
+  position: fixed;
+  background-color: $white-color-blur;
+  padding: .6rem 0; 
+  width: 100%;
+  z-index: 1;
+
+  &>.wrap {
+    @include flex(row, center, space-between);
+
+  }
+
+  &:hover {
+    background-color: #fff;
+    @include trans(.2s);
+  }
+
+  &.wrap {
+    padding: 5px;
+  }
+
+  .logo {
+    @include flex(row, center, space-between);
+    font-family: $font;
+    font-size: $font-size * 2;
+    
+      //logo img and text
+    & a {
+      @include flex(row, center, space-between);
+    }
+
+    & img {
+      width: 3rem;
+    }
+
+      //collaspe btn
+
+    #collaspe-btn {
+      display: none;
+      color: $green-color;
+      font-weight: bold;
+
+      @include breakpoint(tablet) {
+        display: block;
+      }
+    }
+
+    // @include breakpoint(tablet) {
+    //   @include flex(row, null, space-between);
+    // }
+  }
+
+  a {
+    color: $green-color;
+  }
+
+    // nav list and search
+  nav {
+    @include flex(row, center, space-between);
+  }
+
+    // responsive
+  @include breakpoint(tablet) {
+    background-color: #fff;
+    padding: 0;
+
+    &>.wrap {
+      @include flex(column, center, space-between);
+    }
+
+    .logo {
+      width: 100%;
+
+      * {
+        transform: scale(.8);
+      }
+    }
+
+    nav {
+      @include flex(column, center, center);
+      @include trans(.2s);
+      height: 250px;
+      width: 100%;
+      * {
+        display: initial;
+      }
+      // overflow: hidden auto;
+    }
+
+    .hide {
+      @include trans(.2s);
+      height: 0;
+      overflow: hidden;
+
+      * {
+        display: none;
+      }
+    }
+  }
+}
+
+.header-nav-list {
+  @include flex(row, center, center);
+  @include linkBTN;
+  @include breakpoint(tablet) {
+    @include flex(column, center, center);
+    position: relative;
+    height: auto;
+    order: 2;
+
+    &, li {
+      width: 100%;
+    }
+  }
+
+  a {
+    text-align: center;
+  }
+}
+
+.search-form {
+  order: 1;
+}
+
+#search-txt {
+  padding: 5px;
+  box-shadow: 0 0 1px 0 $black-color-blur;
+  border-radius: 5px;
+}
+
+.banner {
+
+  overflow: hidden;
+
+  img {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    z-index: -10;
+  }
+
+}
+
+.banner-slogan {
+  @include abCenter(50%, 20%);
+  width: 600px;
+  height: auto;
+  background-color: $white-color-blur;
+  padding: 2rem;
+  z-index: 1;
+
+  &-btn {
+    display: block;
+    padding: 10px 0;
+    margin: auto;
+    text-align: center;
+    background-color: $green-color;
+    color: #fff;
+
+    &:hover {
+      color: $green-color-blur;
+      background-color: transparent;
+      border: 2px solid $green-color;
+      padding: 8px 0;
+
+    }
+  }
+
+  &-txt {
+    background: #004c07;
+    background: linear-gradient(to right, #004c07 0%,#28a034 17%,#52b152 40%,#108710 65%,#1e891e 91%,#034909 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#004c07', endColorstr='#034909',GradientType=1 );
+    @include textGradient;
+
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: $font-size * 2.5;
+    text-align: justify;
+
+    &.smaller {
+      font-weight: normal;
+      font-size: $font-size * 1.3;
+    }
+  }
+
+  @include breakpoint(tablet) {
+    @include abCenter(50%, 50%);
+    width: 80%;
+
+    &-txt {
+      font-size: $font-size * 1.8;
+      text-align: justify;
+  
+      &.smaller {
+        font-size: $font-size;
+      }
+    }
+  }
+}

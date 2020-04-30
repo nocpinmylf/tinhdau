@@ -40,6 +40,11 @@ embed {max-width: 100%;}
 }
 */
 
+// fix blurry img when use position fixed
+img {
+  transform: scale(1) rotate(0) translate3d(0,0,0);
+}
+
 /* force a vertical scrollbar to prevent a jumpy page */
 html {overflow-y: scroll;}
 

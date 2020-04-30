@@ -2,12 +2,6 @@
 
 @import 'valuable';
 
-@mixin gradient {
-  background: $yellow-color;
-  background: linear-gradient(135deg, $yellow-color 0%, #aa3a4c 50%, #af223c 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$yellow-color', endColorstr='#af223c', GradientType=1);
-}
-
 @mixin trans($s) {
   -webkit-transition: all $s ease-in-out;
   transition: all $s ease-in-out;
@@ -29,8 +23,7 @@
   position: absolute;
   top: $top;
   left: $left;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  transform: translateX(-$left) translateY(-$top);
 }
 
 @mixin breakpoint($point) {
@@ -47,9 +40,27 @@
   }
 }
 
+@mixin linkBTN {
+  a {
+    padding: 10px 15px;
+    color: $green-color;
+    display: block;
+  
+    &:hover {
+      background-color: $green-color;
+      color: #fff;
+    }
+  }
+}
+
 @mixin fontawesome {
   font-family: FontAwesome;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin textGradient {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
