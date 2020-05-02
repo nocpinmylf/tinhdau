@@ -21,7 +21,7 @@ a {
     font-weight: bold;
     font-size: 1.2rem;
     text-align: center;
-    margin-bottom: 1rem;
+
   }
 
   li {
@@ -35,6 +35,12 @@ a {
   a {
     font-size: $font-size * 2;
   }
+}
+
+.address {
+  display: block;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .up-btn {

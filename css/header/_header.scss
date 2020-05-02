@@ -3,6 +3,10 @@
 @import "../global/valuable";
 
 // =============
+.rotate {
+  transform: rotate(90deg);
+}
+
 #header {
   @include flex(column, center, null);
   height: 100vh;
@@ -50,6 +54,8 @@
       display: none;
       color: $green-color;
       font-weight: bold;
+      transition: all .2s ease-in-out;
+
 
       @include breakpoint(tablet) {
         display: block;
@@ -82,7 +88,7 @@
     .logo {
       width: 100%;
 
-      * {
+      &>* {
         transform: scale(.8);
       }
     }
@@ -130,7 +136,9 @@
 }
 
 .search-form {
+  margin-left: 10px;
   order: 1;
+
 }
 
 #search-txt {

@@ -11,24 +11,24 @@
   }
 }
 
-.loading {
-  @include abCenter(50%, 50%);
-  margin: -100px 0 0 -100px;
-  padding: 100px;
-  border-radius: 100%;
+// .loading {
+//   @include abCenter(50%, 50%);
+//   margin: -50px 0 0 -50px;
+//   padding: 50px;
+//   border-radius: 100%;
 
-  // border-top: 16px solid $white-color;
-  // border-right: 16px solid $black-color;
-  // border-bottom: 16px solid $yellow-color;
-  // border-left: 16px solid $red-color;
-  animation: spin 2s linear infinite;
-  overflow: hidden;
-  z-index: 9999999;
+//   border-top: 8px solid $white-color;
+//   border-right: 8px solid $black-color;
+//   border-bottom: 8px solid $yellow-color;
+//   border-left: 8px solid $red-color;
+//   animation: spin 2s linear infinite;
+//   overflow: hidden;
+//   z-index: 9999999;
 
-  & * {
-    display: none;
-  }
-}
+//   & * {
+//     display: none;
+//   }
+// }
 
 html {
   scroll-behavior: smooth;
