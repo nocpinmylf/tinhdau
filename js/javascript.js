@@ -36,3 +36,19 @@ function slideFoward(bool) {
 function insertAfter(existingNode, newNode) {
   existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling);
 }
+
+// delay loading
+const elements = document.querySelectorAll('[delay-bottom]');
+
+observers = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if(entry.isIntersecting) {
+      let time = entry.target.dataset.delay;
+      entry.target.style.animation = `appearBottom ${time} forwards ease-out`;
+    }
+  })
+})
+
+elements.forEach((element) => {
+  observers.observe(element)
+})
