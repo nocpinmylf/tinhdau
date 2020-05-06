@@ -32,7 +32,8 @@ function slideFoward(bool) {
     slide.insertBefore(lastChild, firstChild);
   }
 }
-//insert after
+
+  //insert after
 function insertAfter(existingNode, newNode) {
   existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling);
 }

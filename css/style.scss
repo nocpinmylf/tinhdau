@@ -110,7 +110,6 @@
         margin-right: 2rem;
       }
     }
-
   }
 }
 
@@ -122,10 +121,6 @@
   padding: 4rem 2rem;
   text-align: justify;
 
-  &:hover {
-    background-color: $white-color-blur;
-  }
-
   &::after {
     position: absolute;
     left: 0;
@@ -135,6 +130,10 @@
     width: 100%;
     height: 100%;
     z-index: -1;
+  }
+
+  &:hover {
+    background-color: $white-color-blur;
   }
 }
 
@@ -187,7 +186,7 @@ $img-width: 300px;
     .back {
       @include trans(.2s);
       width: 100%;
-      height: 100%;
+      height: 98%;
       padding: 10px;
       position: absolute;
       color: $green-color;
